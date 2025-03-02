@@ -108,3 +108,40 @@ function initMap() {
     scaleControl: true,
   });
 }
+
+// JavaScript for the image slider on the index page
+let currentSlide = 0;
+
+function showSlide(index) {
+  const slides = document.querySelectorAll(".slides");
+  
+  // Loop through the slides and hide them
+  slides.forEach(slide => {
+    slide.classList.remove("active");
+  });
+  
+  // If the index is out of bounds, wrap it around
+  if (index >= slides.length) {
+    currentSlide = 0;
+  } else if (index < 0) {
+    currentSlide = slides.length - 1;
+  }
+  
+  // Show the current slide
+  slides[currentSlide].classList.add("active");
+}
+
+// Change slide when the user clicks next or prev
+function changeSlide(direction) {
+  currentSlide += direction;
+  showSlide(currentSlide);
+}
+
+// Automatically change slide every 3 seconds
+setInterval(() => {
+  currentSlide++;
+  showSlide(currentSlide);
+}, 3000); // 3 seconds interval
+
+// Show the first slide initially
+showSlide(currentSlide);
