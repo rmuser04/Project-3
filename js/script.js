@@ -109,39 +109,41 @@ function initMap() {
   });
 }
 
-// JavaScript for the image slider on the index page
-let currentSlide = 0;
+// JavaScript for the Image Slider
+let currentSlide = 0; // Track the current slide index
 
+// Function to show the current slide
 function showSlide(index) {
-  const slides = document.querySelectorAll(".slides");
-  
-  // Loop through the slides and hide them
-  slides.forEach(slide => {
-    slide.classList.remove("active");
-  });
-  
-  // If the index is out of bounds, wrap it around
+  const slides = document.querySelectorAll('.slides'); // Get all slides
   if (index >= slides.length) {
-    currentSlide = 0;
-  } else if (index < 0) {
-    currentSlide = slides.length - 1;
+    currentSlide = 0; // Reset to the first slide if at the end
+  }
+  if (index < 0) {
+    currentSlide = slides.length - 1; // Go to the last slide if at the beginning
   }
   
-  // Show the current slide
-  slides[currentSlide].classList.add("active");
+  // Hide all slides and remove the 'active' class
+  slides.forEach(slide => {
+    slide.classList.remove('active');
+  });
+  
+  // Show the current slide by adding the 'active' class
+  slides[currentSlide].classList.add('active');
 }
 
-// Change slide when the user clicks next or prev
+// Function to change slide (prev or next)
 function changeSlide(direction) {
-  currentSlide += direction;
-  showSlide(currentSlide);
+  currentSlide += direction; // Increment or decrement the slide index
+  showSlide(currentSlide); // Update the slide display
 }
 
 // Automatically change slide every 3 seconds
 setInterval(() => {
   currentSlide++;
   showSlide(currentSlide);
-}, 3000); // 3 seconds interval
+}, 3000); // Change every 3 seconds
 
-// Show the first slide initially
-showSlide(currentSlide);
+// Initialize the slider on page load
+document.addEventListener('DOMContentLoaded', () => {
+  showSlide(currentSlide); // Start with the first slide
+});
