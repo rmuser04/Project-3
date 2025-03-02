@@ -72,12 +72,12 @@ function initMap() {
   });
 }
 
-// JavaScript for Image Slider
+// JavaScript for Image Slider on LE Images Page
 let currentSlide = 0; // Track the current slide index
 
 // Function to show the current slide
 function showSlide(index) {
-  const slides = document.querySelectorAll('.slides'); // Get all slides
+  const slides = document.querySelectorAll('.slide'); // Get all slides
   if (index >= slides.length) {
     currentSlide = 0; // Reset to the first slide if at the end
   }
@@ -100,13 +100,13 @@ function changeSlide(direction) {
   showSlide(currentSlide); // Update the slide display
 }
 
-// Automatically change slide every 3 seconds
-setInterval(() => {
-  currentSlide++;
-  showSlide(currentSlide);
-}, 3000); // Change every 3 seconds
-
 // Initialize the slider on page load
 document.addEventListener('DOMContentLoaded', () => {
   showSlide(currentSlide); // Start with the first slide
 });
+
+// Optional: Automatically change slide every 3 seconds (can be disabled if manual controls are preferred)
+// setInterval(() => {
+//   currentSlide++;
+//   showSlide(currentSlide);
+// }, 3000); // Change every 3 seconds
