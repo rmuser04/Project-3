@@ -84,12 +84,12 @@ function showSlide(index) {
   if (index < 0) {
     currentSlide = slides.length - 1; // Go to the last slide if at the beginning
   }
-  
-  // Hide all slides and remove the 'active' class
+
+  // Hide all slides by removing the 'active' class
   slides.forEach(slide => {
     slide.classList.remove('active');
   });
-  
+
   // Show the current slide by adding the 'active' class
   slides[currentSlide].classList.add('active');
 }
@@ -105,8 +105,8 @@ document.addEventListener('DOMContentLoaded', () => {
   showSlide(currentSlide); // Start with the first slide
 });
 
-// Optional: Automatically change slide every 3 seconds (can be disabled if manual controls are preferred)
-// setInterval(() => {
-//   currentSlide++;
-//   showSlide(currentSlide);
-// }, 3000); // Change every 3 seconds
+// Automatically change slide every 3 seconds
+setInterval(() => {
+  currentSlide++;
+  showSlide(currentSlide);
+}, 3000); // Change every 3 seconds
