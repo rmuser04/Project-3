@@ -1,0 +1,93 @@
+/* General Styles */
+body {
+  font-family: 'Arial', sans-serif; /* Native font for body */
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4;
+}
+
+/* Header Styles */
+header {
+  background-color: #333;
+  color: white;
+  padding: 1rem 0;
+  text-align: center;
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+}
+
+nav ul li {
+  display: inline;
+  margin: 0 1rem;
+}
+
+nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-size: 1.2em;
+}
+
+nav ul li a:hover {
+  text-decoration: underline;
+}
+
+/* Main Content Styles */
+main {
+  padding: 2rem;
+}
+
+/* Fluid Layout - Using relative units */
+#hobbies, #states, #pets {
+  padding: 1rem;
+  margin-bottom: 2rem;
+  background-color: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+}
+
+h1, h2, h3 {
+  font-family: 'Georgia', serif; /* Imported font for headers */
+}
+
+h2 {
+  font-size: 1.8rem;
+  color: #333;
+}
+
+/* Images */
+img {
+  width: 100%;
+  max-width: 600px;
+  height: auto;
+  display: block;
+  margin: 1rem auto;
+}
+
+/* Footer Styles */
+footer {
+  background-color: #333;
+  color: white;
+  text-align: center;
+  padding: 1rem 0;
+  font-size: 0.9em;
+}
+
+/* Fluid Layout Page */
+.fluid-layout {
+  width: 100%;
+  max-width: 100%;
+  padding: 2rem;
+}
+
+/* Fixed Width Layout Page */
+.fixed-layout {
+  width: 80%;
+  margin: 0 auto;
+  max-width: 1200px;
+}
+
+/* Typography - Imported Font */
+@import url('https://fonts.googleapis.com/css2?family=Georgia&display=swap');
