@@ -71,3 +71,26 @@ function initMap() {
     scaleControl: true,
   });
 }
+
+// JavaScript for Image Slider (Lunar Eclipse Images Page)
+const images = [
+  "media/image1.JPG",
+  "media/image2.JPG",
+  "media/image3.JPG"
+];
+
+// Variable to track the current image index
+let currentIndex = 0;
+
+// Function to show the next image
+function showNextImage() {
+  // Increment the current index
+  currentIndex = (currentIndex + 1) % images.length; // Wraps around to 0 when we reach the end
+
+  // Get the image element and update the source
+  const imageElement = document.getElementById("currentImage");
+  imageElement.src = images[currentIndex];
+}
+
+// Event listener for the button click
+document.getElementById("nextButton").addEventListener("click", showNextImage);
