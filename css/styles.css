@@ -1,6 +1,6 @@
 /* General Styles */
 body {
-  font-family: 'Arial', sans-serif; /* Native font for body */
+  font-family: 'Arial', sans-serif;
   margin: 0;
   padding: 0;
   background-color: #f4f4f4;
@@ -17,10 +17,11 @@ header {
 nav ul {
   list-style: none;
   padding: 0;
+  display: flex;
+  justify-content: center;
 }
 
 nav ul li {
-  display: inline;
   margin: 0 1rem;
 }
 
@@ -32,6 +33,30 @@ nav ul li a {
 
 nav ul li a:hover {
   text-decoration: underline;
+}
+
+/* Menu Toggle Button */
+.menu-toggle {
+  display: none;
+  background-color: #333;
+  color: white;
+  font-size: 2rem;
+  border: none;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+}
+
+nav ul {
+  display: flex;
+}
+
+nav ul#nav-menu {
+  display: block;
+}
+
+nav ul#nav-menu li {
+  display: block;
+  margin: 1rem 0;
 }
 
 /* Main Content Styles */
@@ -49,7 +74,7 @@ main {
 }
 
 h1, h2, h3 {
-  font-family: 'Georgia', serif; /* Imported font for headers */
+  font-family: 'Georgia', serif;
 }
 
 h2 {
@@ -75,19 +100,34 @@ footer {
   font-size: 0.9em;
 }
 
-/* Fluid Layout Page */
-.fluid-layout {
-  width: 100%;
-  max-width: 100%;
-  padding: 2rem;
+/* Media Queries */
+
+/* Mobile devices */
+@media screen and (max-width: 767px) {
+  nav ul {
+    display: none; /* Hide the menu by default */
+  }
+
+  .menu-toggle {
+    display: block; /* Show the menu toggle button */
+  }
+
+  nav ul#nav-menu {
+    display: block;
+  }
 }
 
-/* Fixed Width Layout Page */
-.fixed-layout {
-  width: 80%;
-  margin: 0 auto;
-  max-width: 1200px;
-}
+/* Tablets and larger devices (min-width: 768px) */
+@media screen and (min-width: 768px) {
+  .menu-toggle {
+    display: none; /* Hide menu toggle on tablets and larger devices */
+  }
 
-/* Typography - Imported Font */
-@import url('https://fonts.googleapis.com/css2?family=Georgia&display=swap');
+  nav ul {
+    display: flex;
+  }
+
+  nav ul li {
+    display: inline; /* Horizontal layout */
+  }
+}

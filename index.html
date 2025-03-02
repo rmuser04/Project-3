@@ -4,11 +4,23 @@
     <meta charset="utf-8">
     <title>About Me</title>
     <link rel="stylesheet" href="css/styles.css">
+    <script>
+      // JavaScript for toggling the navigation menu on mobile
+      function toggleMenu() {
+        var nav = document.getElementById("nav-menu");
+        if (nav.style.display === "block") {
+          nav.style.display = "none";
+        } else {
+          nav.style.display = "block";
+        }
+      }
+    </script>
   </head>
   <body>
     <header>
       <nav>
-        <ul>
+        <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+        <ul id="nav-menu">
           <li><a href="index.html">About me</a></li>
           <li><a href="resume.html">Resume</a></li>
           <li><a href="leimages.html">LE Images</a></li>
