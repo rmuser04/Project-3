@@ -1,4 +1,4 @@
-/* General Styles */
+//* General Styles */
 body {
   font-family: 'Arial', sans-serif;
   margin: 0;
@@ -66,6 +66,15 @@ img {
   margin: 1rem auto;
 }
 
+/* Video */
+video {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 1rem auto;
+}
+
 /* Footer Styles */
 footer {
   background-color: #333;
@@ -118,6 +127,18 @@ footer {
 
   img {
     max-width: 100%;
+  }
+
+  /* Ensure the video doesn't stretch across the page */
+  video {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  /* Center the sections */
+  #hobbies, #states, #pets {
+    margin: 0 auto;
+    width: 90%;
   }
 }
 
