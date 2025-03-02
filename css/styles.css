@@ -1,6 +1,6 @@
 /* General Styles */
 body {
-  font-family: 'Arial', sans-serif;
+  font-family: 'Arial', sans-serif; /* Native font for body */
   margin: 0;
   padding: 0;
   background-color: #f4f4f4;
@@ -17,11 +17,10 @@ header {
 nav ul {
   list-style: none;
   padding: 0;
-  display: flex;
-  justify-content: center;
 }
 
 nav ul li {
+  display: inline;
   margin: 0 1rem;
 }
 
@@ -33,30 +32,6 @@ nav ul li a {
 
 nav ul li a:hover {
   text-decoration: underline;
-}
-
-/* Menu Toggle Button */
-.menu-toggle {
-  display: none;
-  background-color: #333;
-  color: white;
-  font-size: 2rem;
-  border: none;
-  padding: 0.5rem 1rem;
-  cursor: pointer;
-}
-
-nav ul {
-  display: flex;
-}
-
-nav ul#nav-menu {
-  display: block;
-}
-
-nav ul#nav-menu li {
-  display: block;
-  margin: 1rem 0;
 }
 
 /* Main Content Styles */
@@ -74,7 +49,7 @@ main {
 }
 
 h1, h2, h3 {
-  font-family: 'Georgia', serif;
+  font-family: 'Georgia', serif; /* Imported font for headers */
 }
 
 h2 {
@@ -100,34 +75,77 @@ footer {
   font-size: 0.9em;
 }
 
+/* Fluid Layout Page */
+.fluid-layout {
+  width: 100%;
+  max-width: 100%;
+  padding: 2rem;
+}
+
+/* Fixed Width Layout Page */
+.fixed-layout {
+  width: 80%;
+  margin: 0 auto;
+  max-width: 1200px;
+}
+
+/* Typography - Imported Font */
+@import url('https://fonts.googleapis.com/css2?family=Georgia&display=swap');
+
 /* Media Queries */
 
-/* Mobile devices */
-@media screen and (max-width: 767px) {
-  nav ul {
-    display: none; /* Hide the menu by default */
+/* Mobile devices (min-width: 320px) */
+@media screen and (min-width: 320px) {
+  body {
+    font-size: 14px; /* Smaller font size for smaller devices */
   }
 
-  .menu-toggle {
-    display: block; /* Show the menu toggle button */
+  h1 {
+    font-size: 1.5rem;
   }
 
-  nav ul#nav-menu {
-    display: block;
+  h2 {
+    font-size: 1.5rem;
+  }
+
+  nav ul li {
+    display: block; /* Stacking menu items */
+    margin: 0.5rem 0; /* Adjust spacing between menu items */
+  }
+
+  .fluid-layout {
+    padding: 1.5rem; /* Reducing padding for smaller devices */
+  }
+
+  #hobbies, #states, #pets {
+    padding: 0.8rem; /* Reducing padding */
   }
 }
 
 /* Tablets and larger devices (min-width: 768px) */
 @media screen and (min-width: 768px) {
-  .menu-toggle {
-    display: none; /* Hide menu toggle on tablets and larger devices */
+  body {
+    font-size: 16px; /* Slightly larger font size for tablets */
   }
 
-  nav ul {
-    display: flex;
+  h1 {
+    font-size: 2rem;
+  }
+
+  h2 {
+    font-size: 1.8rem;
   }
 
   nav ul li {
-    display: inline; /* Horizontal layout */
+    display: inline; /* Horizontal menu on tablets */
+    margin: 0 1rem;
+  }
+
+  .fluid-layout {
+    padding: 2rem; /* Restore default padding for larger devices */
+  }
+
+  #hobbies, #states, #pets {
+    padding: 1rem;
   }
 }
